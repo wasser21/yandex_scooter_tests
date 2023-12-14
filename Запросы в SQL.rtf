@@ -1,0 +1,16 @@
+{\rtf1\ansi\ansicpg1251\cocoartf1561\cocoasubrtf610
+{\fonttbl\f0\fnil\fcharset0 HelveticaNeue-Bold;\f1\fnil\fcharset0 HelveticaNeue;}
+{\colortbl;\red255\green255\blue255;\red53\green53\blue53;}
+{\*\expandedcolortbl;;\cssrgb\c27059\c27059\c27059;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab560
+\pard\pardeftab560\sa40\partightenfactor0
+
+\f0\b\fs28 \cf2 \uc0\u1056 \u1072 \u1073 \u1086 \u1090 \u1072  \u1089  \u1041 \u1072 \u1079 \u1086 \u1081  \u1076 \u1072 \u1085 \u1085 \u1099 \u1093 \
+\pard\pardeftab560\slleading20\pardirnatural\partightenfactor0
+
+\f1\b0\fs24 \cf2 \
+SELECT c.login, COUNT(od.track) FROM "Couriers" AS c INNER JOIN "Orders" AS od ON c.id = od."courierId" WHERE "inDelivery" = true GROUP BY c.login;\
+\
+SELECT track, CASE WHEN finished = true THEN '2' WHEN cancelled = true THEN '-1' WHEN "inDelivery" = true THEN '1' ELSE '0' END AS status FROM "Orders";\
+}
